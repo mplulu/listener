@@ -46,6 +46,7 @@ func startServer() {
 	}))
 	r.Use(PreRequest)
 	r.POST("/*", listenerHandler)
+	r.GET("/*", listenerHandler)
 
 	// Start server
 	err := r.Start(kPort)
