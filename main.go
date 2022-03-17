@@ -84,6 +84,7 @@ func GenCustomBodyDumpHandler(provider string) middleware.BodyDumpHandler {
 		log.Log("<<<<<<< %v-x START %s: %s", provider, c.Request().Method, c.Request().RequestURI)
 		reqStr := strings.Trim(string(reqBody), "\n\t ")
 		resStr := strings.Trim(string(resBody), "\n\t ")
+		log.Log("=> %v-x: request header: %v", provider, c.Request().Header)
 		log.Log("=> %v-x: request body: %s", provider, reqStr)
 		log.Log("=> %v-x: response status: %d, body: %s", provider, c.Response().Status, resStr)
 		log.Log(">>>>>>> %v-x END -----", provider)
