@@ -45,7 +45,7 @@ func startServer() {
 		}
 	}))
 	r.Use(PreRequest)
-	r.Use(middleware.BodyDump(GenCustomBodyDumpHandler(provider)))
+	r.Use(middleware.BodyDump(GenCustomBodyDumpHandler("pazemo")))
 	r.POST("/*", listenerHandler)
 	r.GET("/*", listenerHandler)
 
